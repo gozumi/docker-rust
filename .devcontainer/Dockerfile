@@ -12,4 +12,5 @@ RUN apt-get install -y zsh curl
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 RUN sed -i -e 's/robbyrussell/agnoster/g' ~/.zshrc
 RUN chsh -s $(which zsh)
-
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN sed -i -e '$aexport PATH=$HOME/.cargo/bin:$PATH' ~/.zshrc
