@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
     
-RUN apt-get install -y zsh curl
+RUN apt-get install -y zsh curl build-essential
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 RUN sed -i -e 's/robbyrussell/agnoster/g' ~/.zshrc
 RUN chsh -s $(which zsh)
